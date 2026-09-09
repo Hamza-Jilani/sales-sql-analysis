@@ -119,8 +119,6 @@ GO
 
 ![Query Result](https://github.com/user-attachments/assets/1c1c19b3-f2aa-4ac8-88e0-ba38dda72901)
 
-
-
 -- ----------------------------------------------------------------------------
 -- Question 2: High-Priority Online Sales in Europe
 -- Business Context: Find critical (Priority 'H') online transactions in Europe to monitor order fulfillment.
@@ -169,6 +167,10 @@ FROM dbo.Sales
 WHERE UnitsSold BETWEEN 5000 AND 10000
 ORDER BY UnitsSold DESC;
 GO
+
+**Query Result:**
+
+![Query Result](https://github.com/user-attachments/assets/a2ccdc17-685a-4735-96e8-f5ffa25cf8b8)
 
 -- ----------------------------------------------------------------------------
 -- Question 5: High-Profit Margins in Specific Regions (Asia or North America)
@@ -222,6 +224,10 @@ FROM dbo.Sales
 WHERE DATEDIFF(DAY, OrderDate, ShipDate) > 30
 ORDER BY DaysToShip DESC;
 GO
+
+**Query Result:**
+
+![Query Result](https://github.com/user-attachments/assets/5bc0f2fc-8b63-4813-902b-57b165cc8cd8)
 
 -- ----------------------------------------------------------------------------
 -- Question 8: Combined Catalog of High Revenue vs High Unit Volume Orders
@@ -293,6 +299,10 @@ FROM dbo.Sales
 WHERE OrderPriority = 'L' AND TotalProfit > 400000.00
 ORDER BY TotalProfit DESC;
 GO
+
+**Query Result:**
+
+![Query Result](https://github.com/user-attachments/assets/d2c661bf-03c5-4b31-b17b-1b330a50af77)
 
 
 ## 🚀 How to Run This Project
