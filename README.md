@@ -115,6 +115,12 @@ FROM dbo.Sales
 ORDER BY TotalRevenue DESC;
 GO
 
+**Query Result:**
+
+![Query Result](https://github.com/user-attachments/assets/1c1c19b3-f2aa-4ac8-88e0-ba38dda72901)
+
+
+
 -- ----------------------------------------------------------------------------
 -- Question 2: High-Priority Online Sales in Europe
 -- Business Context: Find critical (Priority 'H') online transactions in Europe to monitor order fulfillment.
