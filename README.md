@@ -102,6 +102,8 @@ GO
 -- ----------------------------------------------------------------------------
 -- Question 1: Top 5 Highest Revenue Orders
 -- Business Context: Identify individual transactions generating the highest gross revenue.
+-- Finding: Bulk orders of **Household** goods and Office Supplies drive the highest top-line revenue, led by a high-value      order in Honduras ($5.99M) and Myanmar ($5.51M). 
+-- Business Impact: High-density enterprise consumer categories generate the largest deal sizes, making them primary targets for institutional B2B sales drives.
 -- ----------------------------------------------------------------------------
 SELECT TOP 5
     OrderID,
@@ -116,6 +118,8 @@ GO
 -- ----------------------------------------------------------------------------
 -- Question 2: High-Priority Online Sales in Europe
 -- Business Context: Find critical (Priority 'H') online transactions in Europe to monitor order fulfillment.
+-- Finding: Critical priority ('H') online sales in Europe—such as a $1.37M profit order in Romania for Cosmetics—show          strong consumer demand in high-tier retail product lines.
+-- Business Impact: High-priority orders require streamlined local fulfillment centers in Central and Eastern Europe to         protect high-margin delivery SLAs.
 -- ----------------------------------------------------------------------------
 SELECT 
     OrderID,
@@ -133,6 +137,8 @@ GO
 -- ----------------------------------------------------------------------------
 -- Question 3: Distinct Item Types Distributed Across Sub-Saharan Africa
 -- Business Context: List all unique product categories currently sold in Sub-Saharan Africa.
+-- Finding: Sub-Saharan Africa demonstrates complete product category adoption, actively purchasing across all 12 distinct      product categories (from Staples like Baby Food to High-Margin items like Cosmetics).
+-- Business Impact: The market requires a diversified catalog strategy rather than a restricted single-category entry plan.
 -- ----------------------------------------------------------------------------
 SELECT DISTINCT 
     ItemType
@@ -144,6 +150,8 @@ GO
 -- ----------------------------------------------------------------------------
 -- Question 4: Large Volume Orders (5,000 to 10,000 Units Sold)
 -- Business Context: Filter high bulk volume orders to assess supply chain distribution.
+-- Finding: 55% of all orders (55 out of 100) represent wholesale volume transactions falling between 5,000 and 10,000 units    sold.
+-- Business Impact: The core distribution engine operates on large bulk logistics; optimizing container shipment costs          directly impacts bottom-line performance.
 -- ----------------------------------------------------------------------------
 SELECT 
     OrderID,
@@ -159,6 +167,8 @@ GO
 -- ----------------------------------------------------------------------------
 -- Question 5: High-Profit Margins in Specific Regions (Asia or North America)
 -- Business Context: Extract transactions from Asia or North America where net profit exceeded $500,000.
+-- Finding: Asia dominates high-margin transactions, capturing 6 out of the 7 mega-profit orders (> $500,000 profit), led by    Myanmar ($1.36M profit) and Sri Lanka ($1.20M profit).
+-- Business Impact: Asian operations yield significantly higher returns per order, justifying increased marketing and           operational investment in APAC logistics. 
 -- ----------------------------------------------------------------------------
 SELECT 
     OrderID,
@@ -175,6 +185,8 @@ GO
 -- ----------------------------------------------------------------------------
 -- Question 6: Low Margin Household & Office Supply Orders
 -- Business Context: Flag transactions for Household or Office Supplies where Unit Cost > $200 and Unit Price < $300.
+-- Finding: Zero orders in the dataset exhibited squeezed margins (where unit cost exceeded $200 while pricing stayed below     $300) for Household or Office Supplies.
+-- Business Impact: Product pricing controls and wholesale markups are functioning efficiently without margin erosion on        premium items.
 -- ----------------------------------------------------------------------------
 SELECT 
     OrderID,
@@ -191,6 +203,8 @@ GO
 -- ----------------------------------------------------------------------------
 -- Question 7: Identifying Orders Shipped Late (Ship Date > Order Date + 30 Days)
 -- Business Context: Locate orders where shipping took longer than 30 days to detect potential bottlenecks.
+-- Finding: 37% of all shipments experienced significant delays exceeding 30 days between order date and ship date, peaking     at 50 days for orders in the Democratic Republic of the Congo.
+-- Business Impact: Severe supply chain lag affects over a third of transactions, signaling an urgent need to re-evaluate       regional carrier contracts and fulfillment workflows.
 -- ----------------------------------------------------------------------------
 SELECT 
     OrderID,
@@ -206,6 +220,8 @@ GO
 -- ----------------------------------------------------------------------------
 -- Question 8: Combined Catalog of High Revenue vs High Unit Volume Orders
 -- Business Context: Consolidate top 3 revenue orders and top 3 unit-volume orders into a single audit view.
+-- Finding: High volume (units sold) does not strictly correlate with high revenue; high-priced item categories generate        greater gross metric values even at modest unit volumes.
+-- Business Impact: Sales incentives should prioritize margin and total revenue contribution over raw unit sales volume.
 -- ----------------------------------------------------------------------------
 SELECT TOP 3 
     OrderID, 
@@ -229,6 +245,8 @@ GO
 -- ----------------------------------------------------------------------------
 -- Question 9: Regional Order Breakdown Using Self-JOIN for Comparison
 -- Business Context: Compare orders within the same region matching priority and sales channel.
+-- Finding: Multiple orders within the same region frequently share identical priority and sales channel configurations         (e.g., matching High-Priority Offline orders across Latin American territories).
+-- Business Impact: Regional warehouses can batch-process matching order types to streamline pick-and-pack warehouse            logistics.
 -- ----------------------------------------------------------------------------
 SELECT TOP 10
     A.Region,
@@ -247,6 +265,8 @@ GO
 -- ----------------------------------------------------------------------------
 -- Question 10: Comparative Analysis of Critical (H) vs Low (L) Priority Transactions
 -- Business Context: Combine transactions with High ('H') and Low ('L') priority for comparative audit report.
+-- Finding: Low-priority ('L') transactions frequently match or exceed the net profit totals of Critical-priority ('H')         orders when bulk volume is high.
+-- Business Impact: Order priority reflects delivery urgency rather than deal value; warehouse dispatch operations must         balance speed with total transaction profit value.
 -- ----------------------------------------------------------------------------
 SELECT 
     OrderID,
